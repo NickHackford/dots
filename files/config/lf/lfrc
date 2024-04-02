@@ -68,7 +68,7 @@ map R $qmv
 
 # Movement
 map gh cd ~
-map gw cd /mnt/c/Users/nick
+map gw cd /mnt/c/Users/hack56224
 map gc cd ~/codebase
 map gp cd ~/Pictures
 map gd cd ~/Downloads

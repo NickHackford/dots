@@ -198,7 +198,7 @@ keybindings:
   - command: "exec alacritty"
     binding: "Alt+Q"
 
-  - command: "exec brave"
+  - command: "exec chrome"
     binding: "Alt+W"
 
   - command: "exec explorer"
