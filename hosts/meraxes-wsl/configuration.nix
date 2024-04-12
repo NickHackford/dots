@@ -69,10 +69,10 @@ in {
         }
       }
 
-      copy "/home/nick/.config/dots/files/windows/.glaze-wm/config.yaml" \
+      copy "/home/nick/.config/dots/windows/.glaze-wm/config.yaml" \
               "/mnt/c/Users/nick/.glaze-wm/config.yaml"
 
-      copy "/home/nick/.config/dots/files/windows/AppData/Roaming/alacritty/alacritty.toml" \
+      copy "/home/nick/.config/dots/windows/AppData/Roaming/alacritty/alacritty.toml" \
               "/mnt/c/Users/nick/AppData/Roaming/alacritty/alacritty.toml"
 
       copy "${themeFile}" \
@@ -81,7 +81,7 @@ in {
       # WSL doesn't have permissions to copy to program files,
       if [ ! -f '/mnt/c/Program Files/Alacritty/conpty.dll' ]; then
           echo "WSL doesn't have necessary permissions, manually copy alacritty scroll fix files"
-          explorer.exe "$(wslpath -w '/home/nick/.config/dots/files/windows/Program Files/Alacritty')"
+          explorer.exe "$(wslpath -w '/home/nick/.config/dots/windows/Program Files/Alacritty')"
           explorer.exe "$(wslpath -w '/mnt/c/Program Files/Alacritty')"
       fi
 
