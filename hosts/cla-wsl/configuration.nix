@@ -40,7 +40,7 @@ in {
     packages = with pkgs; [ ];
   };
 
-  environment.systemPackages = with pkgs; [ gimp ];
+  environment.systemPackages = with pkgs; [ ];
 
   system.activationScripts.windows = {
     text = ''
