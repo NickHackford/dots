@@ -87,5 +87,14 @@
           specialArgs = { inherit wallLarge wallSmall hyprland; };
         };
       };
+
+      homeConfigurations = {
+        hack56224 = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules =
+            [ stylix.homeManagerModules.stylix ./hosts/cla-vm/home.nix ];
+          extraSpecialArgs = { inherit nixpkgs system; };
+        };
+      };
     };
 }
