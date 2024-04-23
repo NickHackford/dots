@@ -18,6 +18,7 @@ with config.lib.stylix.colors.withHashtag; {
   home.sessionVariables = { NIX_SHELL_PRESERVE_PROMPT = 1; };
 
   programs.zsh.enable = true;
+  programs.direnv.enable = true;
 
   home.packages = with pkgs; [
     bat
@@ -25,6 +26,7 @@ with config.lib.stylix.colors.withHashtag; {
     cmatrix
     ctpv
     curl
+    delta
     eza
     fastfetch
     fzf
@@ -34,10 +36,13 @@ with config.lib.stylix.colors.withHashtag; {
     p7zip
     renameutils
     ripgrep
+    tlrc
     tmux
     vim
     wget
+    xdg-utils
     zoxide
+    zellij
 
     git
     lazygit
