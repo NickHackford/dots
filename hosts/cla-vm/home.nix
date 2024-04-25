@@ -2,6 +2,8 @@
 with config.lib.stylix.colors.withHashtag; {
   home.username = "hack56224";
   home.homeDirectory = "/home/hack56224";
+  # home.username = "azureuser";
+  # home.homeDirectory = "/home/azureuser";
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
@@ -21,6 +23,10 @@ with config.lib.stylix.colors.withHashtag; {
   programs.direnv.enable = true;
 
   home.packages = with pkgs; [
+    # only our vms
+    azure-cli
+    bc
+
     bat
     btop
     cmatrix
