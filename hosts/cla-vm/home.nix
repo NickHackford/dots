@@ -1,9 +1,9 @@
 { config, pkgs, lib, ... }:
 with config.lib.stylix.colors.withHashtag; {
-  home.username = "hack56224";
-  home.homeDirectory = "/home/hack56224";
-  # home.username = "azureuser";
-  # home.homeDirectory = "/home/azureuser";
+  # home.username = "hack56224";
+  # home.homeDirectory = "/home/hack56224";
+  home.username = "azureuser";
+  home.homeDirectory = "/home/azureuser";
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
