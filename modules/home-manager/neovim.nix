@@ -59,6 +59,7 @@ in {
       nvim-treesitter.withAllGrammars
       nvim-treesitter-context
       obsidian-nvim
+      oil-nvim
       playground
       sniprun
       telescope-fzf-native-nvim
