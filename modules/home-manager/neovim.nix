@@ -40,6 +40,8 @@ in {
       luasnip
       cmp_luasnip
       #codeium-nvim
+      copilot-lua
+      copilot-cmp
       nvim-cmp
       lspkind-nvim
 
