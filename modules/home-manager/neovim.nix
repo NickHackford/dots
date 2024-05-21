@@ -9,6 +9,15 @@ let
       hash = "sha256-AXWN7HqlnSsmtCK8jK5vqyzHwKJY3eJL6fnjeJhoNMU=";
     };
   };
+  copilot-chat = pkgs.vimUtils.buildVimPlugin {
+    name = "copilot-chat";
+    src = pkgs.fetchFromGitHub {
+      owner = "CopilotC-Nvim";
+      repo = "CopilotChat.nvim";
+      rev = "f694ccae14a6f45b783cb386f17431b05162e8d0";
+      hash = "sha256-jZb+dqGaZEs1h2CbvsxbINfHauwHka9t+jmSJQ/mMFM=";
+    };
+  };
   better-vim-tmux-resizer = pkgs.vimUtils.buildVimPlugin {
     name = "better-vim-tmux-resizer";
     src = pkgs.fetchFromGitHub {
@@ -41,6 +50,7 @@ in {
       cmp_luasnip
       #codeium-nvim
       copilot-lua
+      copilot-chat
       copilot-cmp
       nvim-cmp
       lspkind-nvim

@@ -26,5 +26,10 @@ return {
 		opts = {
 			debug = true,
 		},
+		config = function()
+			require("CopilotChat").setup({
+				debug = true,
+			})
+		end,
 	},
 }
