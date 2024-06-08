@@ -10,6 +10,7 @@
     lazygit
     vscode.fhs
 
+    alejandra
     nixfmt
     nil
     shfmt
@@ -37,7 +38,7 @@
     lua-language-server
     stylua
 
-    nodejs_21
+    # nodejs_21
     prettierd
     yarn
     yarn2nix

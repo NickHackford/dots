@@ -1,6 +1,9 @@
-{ config, pkgs, ... }:
-
-let info = builtins.readFile ./info;
+{
+  config,
+  pkgs,
+  ...
+}: let
+  info = builtins.readFile ./info;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -12,8 +15,8 @@ in {
   ];
 
   boot = {
-    kernelModules = [ "sg" ];
-    supportedFilesystems = [ "ntfs" ];
+    kernelModules = ["sg"];
+    supportedFilesystems = ["ntfs"];
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -59,7 +62,8 @@ in {
 
   networking.hostName = "meraxes";
   networking.wireless.iwd.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
+  networking.networkmanager.enable = true;
+  services.avahi.enable = true;
 
   security.polkit.enable = true;
   services.openssh.enable = true;
@@ -67,15 +71,18 @@ in {
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # /mnt/windows/Windows/System32/config                                                                                                                                                     4m 59s 19:20:46
+  # chntpw -e SYSTEM
+  # > cd ControlSet001\Services\BTHPORT\Parameters\Keys
   systemd.tmpfiles.rules = [
-    "f+ /var/lib/bluetooth/00:28:F8:2F:1D:71/DC:2C:EE:3E:A6:75/info - - - - "
-    "w+ /var/lib/bluetooth/00:28:F8:2F:1D:71/DC:2C:EE:3E:A6:75/info - - - - ${info}"
+    "f+ /var/lib/bluetooth/E4:0D:36:08:6B:F9/DC:2C:EE:3E:A6:75/info - - - - "
+    "w+ /var/lib/bluetooth/E4:0D:36:08:6B:F9/DC:2C:EE:3E:A6:75/info - - - - ${info}"
   ];
 
   services.printing.enable = true;
 
   hardware = {
-    opengl = { enable = true; };
+    opengl = {enable = true;};
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = true;
@@ -153,15 +160,14 @@ in {
             ]
           '')
       ];
-
     };
   };
 
   users.users.nick = {
     isNormalUser = true;
     description = "nick";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [ ];
+    extraGroups = ["networkmanager" "wheel" "docker"];
+    packages = with pkgs; [];
   };
 
   # This value determines the NixOS release from which the default
@@ -171,5 +177,4 @@ in {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }

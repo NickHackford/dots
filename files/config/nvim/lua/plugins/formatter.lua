@@ -13,7 +13,7 @@ return {
 					require("formatter.filetypes.sh").shfmt,
 				},
 				nix = {
-					require("formatter.filetypes.nix").nixfmt,
+					require("formatter.filetypes.nix").alejandra,
 				},
 
 				go = {
