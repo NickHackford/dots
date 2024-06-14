@@ -23,9 +23,6 @@ return {
 			{ "zbirenbaum/copilot.lua" },
 			{ "nvim-lua/plenary.nvim" },
 		},
-		opts = {
-			debug = true,
-		},
 		config = function()
 			require("CopilotChat").setup({
 				debug = true,
