@@ -1,5 +1,4 @@
-{ config, pkgs, lib, ... }:
-with config.lib.stylix.colors.withHashtag; {
+{ config, pkgs, lib, ... }: {
   home.username = "nick";
   home.homeDirectory = "/home/nick";
 
@@ -96,13 +95,13 @@ with config.lib.stylix.colors.withHashtag; {
         #!/usr/bin/env bash
         # Color with ANSI palette
         %hidden thm_bg="default"
-        %hidden thm_black="${base00}"
-        %hidden thm_yellow="${base0A}"
-        %hidden thm_blue="${base0D}"
-        %hidden thm_pink="${base0E}"
-        %hidden thm_white="${base07}"
-        %hidden thm_grey="${base04}"
-        %hidden thm_orange="${base09}"
+        %hidden thm_black="{base00}"
+        %hidden thm_yellow="{base0A}"
+        %hidden thm_blue="{base0D}"
+        %hidden thm_pink="{base0E}"
+        %hidden thm_white="{base07}"
+        %hidden thm_grey="{base04}"
+        %hidden thm_orange="{base09}"
 
         %hidden LEFT=
         %hidden RIGHT=

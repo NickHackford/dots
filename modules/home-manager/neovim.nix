@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   harpoon2 = pkgs.vimUtils.buildVimPlugin {
     name = "harpoon2";
     src = pkgs.fetchFromGitHub {
@@ -39,8 +42,11 @@ let
 in {
   programs.neovim = {
     enable = true;
-    extraLuaPackages = luaPkgs: with luaPkgs; [ luasocket ];
+    extraLuaPackages = luaPkgs: with luaPkgs; [luasocket];
     plugins = with pkgs.vimPlugins; [
+      tokyonight-nvim
+      nightfox-nvim
+
       # nvim-dap
       # nvim-dap-ui
 
@@ -63,7 +69,6 @@ in {
       harpoon2
       lazygit-nvim
       lualine-nvim
-      # FIXME Doesn't work for some reason
       markdown-preview-nvim
       nvim-tree-lua
       nvim-treesitter.withAllGrammars
@@ -89,11 +94,6 @@ in {
     extraLuaConfig = ''
       require('core.nix-init')
     '';
-    # TODO: Remove once base16 fixes md highlighting and stylix adds transparency to floats
-    extraConfig = ''
-      let base16_background_transparent=1 
-      source ~/.config/nvim/systembase16.vim
-    '';
   };
   home.file = {
     "nvim-settings" = {
@@ -111,6 +111,5 @@ in {
       target = ".config/nvim/snippets";
       recursive = true;
     };
-    "base16" = import ./systembase16.nix { inherit config; };
   };
 }

@@ -1,5 +1,13 @@
 { config, pkgs, lib, ... }:
-with config.lib.stylix.colors.withHashtag; {
+let
+  base00 = "#1f2335";
+  base0A = "#e0af68";
+  base0D = "#7aa2f7";
+  base0E = "#bb9af7";
+  base07 = "#c0caf5";
+  base04 = "#414868";
+  base09 = "#ff9e64";
+in {
   home.username = "nick";
   home.homeDirectory = "/home/nick";
 

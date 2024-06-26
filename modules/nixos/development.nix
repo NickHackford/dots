@@ -9,9 +9,9 @@
     git
     lazygit
     vscode.fhs
+    docker-compose
 
     alejandra
-    nixfmt
     nil
     shfmt
 
@@ -38,7 +38,8 @@
     lua-language-server
     stylua
 
-    # nodejs_21
+    nodejs_22
+    nodePackages.typescript-language-server
     prettierd
     yarn
     yarn2nix

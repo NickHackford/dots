@@ -8,12 +8,12 @@
 { config, lib, pkgs, nixos-wsl, ... }:
 
 let
-  useYaml = false;
-  templateRepo = config.lib.stylix.templates."base16-alacritty${
-      if useYaml then "-yaml" else ""
-    }";
+  # useYaml = false;
+  # templateRepo = config.lib.stylix.templates."base16-alacritty${
+  #     if useYaml then "-yaml" else ""
+  #   }";
 
-  themeFile = config.lib.stylix.colors { inherit templateRepo; };
+  # themeFile = config.lib.stylix.colors { inherit templateRepo; };
 in {
   imports = [
     # include NixOS-WSL modules
@@ -21,7 +21,6 @@ in {
     nixos-wsl.nixosModules.wsl
     ../../modules/nixos/core.nix
     ../../modules/nixos/development.nix
-    ../../modules/nixos/stylix.nix
   ];
 
   wsl.enable = true;
@@ -77,8 +76,8 @@ in {
       copy "/home/nick/.config/dots/windows/AppData/Roaming/alacritty/alacritty.toml" \
               "/mnt/c/Users/hack56224/AppData/Roaming/alacritty/alacritty.toml"
 
-      copy "${themeFile}" \
-              "/mnt/c/Users/hack56224/AppData/Roaming/alacritty/theme.toml"
+      # copy "{themeFile}" \
+      #         "/mnt/c/Users/hack56224/AppData/Roaming/alacritty/theme.toml"
 
       # WSL doesn't have permissions to copy to program files,
       if [ ! -f '/mnt/c/Program Files/Alacritty/conpty.dll' ]; then
